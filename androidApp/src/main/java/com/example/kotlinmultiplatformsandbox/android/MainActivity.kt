@@ -1,16 +1,18 @@
 package com.example.kotlinmultiplatformsandbox.android
 
 import android.os.Bundle
+import android.widget.StackView
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.kotlinmultiplatformsandbox.Greeting
+import com.example.kotlinmultiplatformsandbox.Hello
 import androidx.compose.runtime.*
-
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +30,11 @@ class MainActivity : ComponentActivity() {
                             e.localizedMessage ?: "error"
                         }
                     }
-                    GreetingView(text)
+
+                    Column {
+                        GreetingView(text)
+                        Text(Hello().call())
+                    }
                 }
             }
         }

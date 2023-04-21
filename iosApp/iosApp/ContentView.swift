@@ -5,7 +5,10 @@ struct ContentView: View {
     @ObservedObject private(set) var viewModel: ViewModel
 
     var body: some View {
-        Text(viewModel.text)
+        VStack {
+            Text(viewModel.text)
+            Text(Hello().call())
+        }
     }
 }
 
